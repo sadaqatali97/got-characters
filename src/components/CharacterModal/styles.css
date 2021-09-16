@@ -1,0 +1,120 @@
+.modal-wrap {
+    position: fixed;
+    left: 0;
+    top: 80px;
+    width: 100%;
+    height: calc(100vh - 80px);
+    z-index: 999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    visibility: hidden;
+    opacity: 0;
+    transition: 0.3s all ease;
+}
+.overlay {
+    content: "";
+    background-color: rgba(0, 0, 0, 0.77);
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+.modal-wrap.show {
+    visibility: visible;
+    opacity: 1;
+}
+.modal-box {
+    padding: 15px;
+    background: #fff;
+    border-radius: 3px;
+    min-width: 320px;
+    min-height: 150px;
+    max-width: 777px;
+    width: 100%;
+    transform: scale(0.6);
+    transition: 0.3s all ease;
+    box-sizing: border-box;
+}
+.modal-wrap.show .modal-box {
+    transform: scale(1);
+}
+.modal-row {
+    display: flex;
+    align-items: flex-start;
+}
+.image {
+    flex: 0 0 40%;
+    padding-right: 20px;
+    box-sizing: border-box;
+}
+.image img {
+    width: 100%;
+}
+.details {
+    width: 100%;
+    font-size: 18px;
+}
+.details h2 {
+    font-size: 30px;
+    line-height: 1.7;
+    margin: 0 0 25px 0;
+    font-family: 'Game of Thrones';
+}
+.list-row {
+    display: flex;
+    align-items: flex-start;
+    width: 100%;
+    margin-bottom: 12px;
+}
+.details label {
+    flex: 0 0 100px;
+}
+.details h3 {
+    margin: 0;
+    font-weight: 400;
+}
+.modal-logo {
+    position: absolute;
+    left: 50%;
+    top: -60px;
+    max-width: 400px;
+    transform: translateX(-50%);
+}
+
+
+
+
+@media (max-width: 767px) {
+    .modal-wrap {
+        height: calc(100vh - 67px);
+        top: 67px;
+    }
+    .modal-logo {
+        max-width: 300px;
+        top: -45px;
+    }
+    .details h2 {
+        font-size: 20px;
+        margin-bottom: 13px;
+    }
+    .modal-box {
+        padding: 10px;
+        max-width: calc(100% - 20px);
+    }
+    .details label {
+        flex: 0 0 70px;
+        font-size: 14px;
+    }
+    .details h3 {
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 360px) {
+    .modal-logo {
+        max-width: 270px;
+        top: -40px;
+    }
+}

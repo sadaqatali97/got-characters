@@ -1,0 +1,35 @@
+.userSkeleton {
+    height: 60px;
+    background: #fff;
+    overflow: hidden;
+    max-width: 100%;
+    position: relative;
+    border-radius: 7px;
+}
+.userSkeleton::before {
+    position: absolute;
+    content: "";
+    height: 100%;
+    width: 100%;
+    background: -webkit-gradient(
+		linear,
+		left top,
+		right top, from(transparent),color-stop(rgba(0, 0, 0, 1)),to(transparent));
+    background: linear-gradient(90deg,transparent,rgba(0, 0, 0, 1),transparent);
+    background-repeat: no-repeat;
+    background-size: 60% 100px;
+    animation: shimmer 1s linear infinite;
+    overflow: hidden;
+}
+
+.userSkeleton:before{
+    animation-delay: 0.2s;
+}
+@keyframes shimmer {
+    0%{
+        background-position: -150% 0;
+    }
+    100%{
+        background-position: 180% 0;
+    }
+}
